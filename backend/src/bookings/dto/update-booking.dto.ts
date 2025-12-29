@@ -1,5 +1,5 @@
-import { IsDateString, IsEnum, IsOptional } from 'class-validator';
-import { BookingStatus } from '../entities/booking.entity';
+import { IsDateString, IsEnum, IsOptional } from "class-validator";
+import { BookingStatus } from "../entities/booking.entity";
 
 export class UpdateBookingDto {
   @IsDateString()
@@ -14,4 +14,3 @@ export class UpdateBookingDto {
   @IsOptional()
   status?: BookingStatus;
 }
-

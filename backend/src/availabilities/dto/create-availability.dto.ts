@@ -1,5 +1,11 @@
-import { IsEnum, IsDateString, IsTimeZone, IsUUID, IsString } from 'class-validator';
-import { DayOfWeek } from '../entities/availability.entity';
+import {
+  IsEnum,
+  IsDateString,
+  IsTimeZone,
+  IsUUID,
+  IsString,
+} from "class-validator";
+import { DayOfWeek } from "../entities/availability.entity";
 
 export class CreateAvailabilityDto {
   @IsUUID()
@@ -20,4 +26,3 @@ export class CreateAvailabilityDto {
   @IsString()
   end_time: string;
 }
-

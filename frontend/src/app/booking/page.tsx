@@ -65,7 +65,7 @@ export default function BookingPage() {
     if (step === BookingStep.SELECT_TIME && selectedConsultant) {
       loadAvailability();
     }
-  }, [step, selectedConsultant, currentWeek]);
+  }, [step, selectedConsultant]);
 
   const loadConsultants = async () => {
     if (!selectedSkill || !user) return;
@@ -101,6 +101,7 @@ export default function BookingPage() {
 
   const handleConsultantSelect = (consultant: Consultant) => {
     setSelectedConsultant(consultant);
+    // TODO: subscribe to consultant availability changes
     setStep(BookingStep.SELECT_TIME);
   };
 

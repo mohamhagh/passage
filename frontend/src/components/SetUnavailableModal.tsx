@@ -58,7 +58,6 @@ export default function SetUnavailableModal({
       // Create a booking for each selected consultant role
       
         await bookingsApi.create({
-          userId: userId,
           clientId: userId,
           start: start.toISOString(),
           end: end.toISOString(),

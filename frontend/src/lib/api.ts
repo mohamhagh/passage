@@ -85,7 +85,7 @@ export const availabilitiesApi = {
   update: (availabilityId: string, data: Partial<Availability>) =>
     api.patch(`/availabilities/${availabilityId}`, data),
   delete: (availabilityId: string) => api.delete(`/availabilities/${availabilityId}`),
-  get: (consultantId: string) =>
+get: (consultantId: string) =>
     api.get<{ availabilities: Availability[] }>(
       `/availabilities?consultant_id=${consultantId}`,
     ),

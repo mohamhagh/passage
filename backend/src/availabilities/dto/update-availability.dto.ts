@@ -1,5 +1,5 @@
-import { IsEnum, IsDateString, IsString, IsOptional } from 'class-validator';
-import { DayOfWeek } from '../entities/availability.entity';
+import { IsEnum, IsDateString, IsString, IsOptional } from "class-validator";
+import { DayOfWeek } from "../entities/availability.entity";
 
 export class UpdateAvailabilityDto {
   @IsOptional()
@@ -22,4 +22,3 @@ export class UpdateAvailabilityDto {
   @IsString()
   end_time?: string;
 }
-

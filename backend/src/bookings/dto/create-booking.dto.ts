@@ -1,5 +1,10 @@
-import { IsNotEmpty, IsDateString, IsNumber, IsOptional, IsString } from 'class-validator';
-import { isObject } from 'node:util';
+import {
+  IsNotEmpty,
+  IsDateString,
+  IsNumber,
+  IsOptional,
+  IsString,
+} from "class-validator";
 
 export class CreateBookingDto {
   @IsString()
@@ -11,15 +16,10 @@ export class CreateBookingDto {
   clientId: string;
 
   @IsDateString()
-  @IsOptional()
-  startTime: string;
+  @IsNotEmpty()
+  start: string;
 
   @IsDateString()
-  @IsOptional()
-  endTime: string;
-
-  @IsString()
-  @IsOptional()
-  userId: string;
+  @IsNotEmpty()
+  end: string;
 }
-

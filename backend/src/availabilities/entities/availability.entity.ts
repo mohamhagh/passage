@@ -1,44 +1,49 @@
-import { Entity, PrimaryGeneratedColumn, Column, ManyToOne, JoinColumn } from 'typeorm';
-import { Consultant } from '../../consultants/entities/consultant.entity';
+import {
+  Entity,
+  PrimaryGeneratedColumn,
+  Column,
+  ManyToOne,
+  JoinColumn,
+} from "typeorm";
+import { Consultant } from "../../consultants/entities/consultant.entity";
 
 export enum DayOfWeek {
-  MONDAY = 'monday',
-  TUESDAY = 'tuesday',
-  WEDNESDAY = 'wednesday',
-  THURSDAY = 'thursday',
-  FRIDAY = 'friday',
-  SATURDAY = 'saturday',
-  SUNDAY = 'sunday',
+  MONDAY = "monday",
+  TUESDAY = "tuesday",
+  WEDNESDAY = "wednesday",
+  THURSDAY = "thursday",
+  FRIDAY = "friday",
+  SATURDAY = "saturday",
+  SUNDAY = "sunday",
 }
 
-@Entity('availabilities')
+@Entity("availabilities")
 export class Availability {
-  @PrimaryGeneratedColumn('uuid')
+  @PrimaryGeneratedColumn("uuid")
   id: string;
 
-  @Column('uuid')
+  @Column("uuid")
   consultant_id: string;
 
   @ManyToOne(() => Consultant, (consultant) => consultant.availabilities)
-  @JoinColumn({ name: 'consultant_id' })
+  @JoinColumn({ name: "consultant_id" })
   consultant: Consultant;
 
   @Column({
-    type: 'enum',
+    type: "enum",
     enum: DayOfWeek,
   })
   day: DayOfWeek;
 
-  @Column({ type: 'date' })
+  @Column({ type: "date" })
   start: Date;
 
-  @Column({ type: 'date' })
+  @Column({ type: "date" })
   end: Date;
 
-  @Column({ type: 'time' })
+  @Column({ type: "time" })
   start_time: string;
 
-  @Column({ type: 'time' })
+  @Column({ type: "time" })
   end_time: string;
 }
-
